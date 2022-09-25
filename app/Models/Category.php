@@ -9,14 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function categories()
-    {
-        return $this->hasMany(Category::class);
-    }
-
-    public function childrenCategories()
-    {
-        return $this->hasMany(Category::class)->with('categories');
+    public function subcategories(){
+        return $this->hasMany('App\Category', 'category_id');
     }
 
 }

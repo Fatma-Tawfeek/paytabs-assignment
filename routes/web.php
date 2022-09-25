@@ -15,4 +15,6 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', [CategoryController::class, 'index']);
+Route::post('subcat', [CategoryController::class, 'subCat'])->name('subCat');
+
 

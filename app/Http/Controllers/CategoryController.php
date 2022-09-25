@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
+    {          
+      $categories = Category::where('category_id', NULL)->get();
+     
+      return view('welcome', compact('categories'));
+    }    
+    public function subCat(Request $request)
     {
-        $categories = Category::whereNull('category_id')
-            ->with('childrenCategories')
-            ->get();
-        return view('welcome', compact('categories'));
+         
+        $category_id = $request->cat_id;
+         
+        $subcategories = Category::where('id', $category_id)
+                              ->with('subcategories')
+                              ->get();
+        return response()->json([
+            'subcategories' => $subcategories
+        ]);
     }
 }
