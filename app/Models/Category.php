@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
 
     public function subcategories(){
-        return $this->hasMany('App\Category', 'category_id');
+        return $this->hasMany('App\Models\Category', 'category_id');
     }
 
 }

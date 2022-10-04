@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {          
       $categories = Category::where('category_id', NULL)->get();
      
       return view('welcome', compact('categories'));
-    }    
+    } 
+       
     public function subCat(Request $request)
     {
          

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel 8 jquery ajax categories and subcategories, select dropdown</title>
+        <title>PayTabs Assignment</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -34,13 +34,15 @@
                     @endforeach
                     </select>
                     <h4>Subcategory</h4>
-                    <select class="browser-default custom-select" name="subcategory" id="subcategory">           
+                    <select class="browser-default custom-select" name="subcategory" id="subcategory">
                 </form>
             </div>
             </div>
             </div>
         </div>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
       <script type="text/javascript">
        $.ajaxSetup({
             headers: {
